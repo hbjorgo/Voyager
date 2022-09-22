@@ -1,4 +1,6 @@
-﻿namespace HeboTech.Voyage
+﻿using System;
+
+namespace HeboTech.Voyage
 {
     public class Reporter : IReporter
     {

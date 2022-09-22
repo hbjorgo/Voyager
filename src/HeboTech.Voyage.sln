@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeboTech.Voyage", "HeboTech.Voyage\HeboTech.Voyage.csproj", "{8DFAADEE-90FE-473D-B803-BBEF6F3EC360}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeboTech.Voyage.TestConsole", "HeboTech.Voyage.TestConsole\HeboTech.Voyage.TestConsole.csproj", "{1A87DBC4-912F-4C18-89AA-9DF39D3CF241}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeboTech.Voyage", "HeboTech.Voyage\HeboTech.Voyage.csproj", "{8DFAADEE-90FE-473D-B803-BBEF6F3EC360}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeboTech.Voyage.Tests", "HeboTech.Voyage.Tests\HeboTech.Voyage.Tests.csproj", "{A62A85EF-F495-4AF1-8487-E8642175472A}"
 EndProject
