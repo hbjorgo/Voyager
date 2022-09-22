@@ -1,6 +1,6 @@
 ﻿namespace HeboTech.Voyage
 {
-    public class Reporter
+    public class Reporter : IReporter
     {
         public int TotalItems { get; private set; }
         public DateTime StartTime { get; private set; }
@@ -14,6 +14,11 @@
         public TimeSpan AverageProcessingTime { get; private set; }
 
         public void Start(int totalItems)
+        {
+            Restart(totalItems);
+        }
+
+        public void Restart(int totalItems)
         {
             TotalItems = totalItems;
             StartTime = DateTime.Now;

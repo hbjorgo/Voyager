@@ -1,13 +1,13 @@
 ﻿using HeboTech.Voyage;
 
-int items = 200;
+int items = 100;
 Reporter reporter = new();
 
 reporter.Start(items);
 for (int i = 0; i < items; i++)
 {
-    Thread.Sleep(100);
-    reporter.ReportProgress(2);
+    Thread.Sleep(20);
+    reporter.ReportProgress();
     Console.WriteLine(reporter);
 }
 

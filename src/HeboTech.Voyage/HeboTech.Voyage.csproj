@@ -4,6 +4,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>HeboTech.Voyage</PackageId>
+    <Title>HeboTech.Voyage</Title>
+    <Version>0.1.0</Version>
+    <Authors>HeboTech</Authors>
+    <Product>HeboTech.Voyage</Product>
+    <Company>HeboTech</Company>
+    <Description>Calculates progress report (estimated end time, estimated time left etc)</Description>
+    <PackageProjectUrl>https://github.com/hbjorgo/Voyage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hbjorgo/Voyage</RepositoryUrl>
+    <PackageTags>voyage report progress</PackageTags>
+    <PackageReleaseNotes>https://github.com/hbjorgo/Voyage/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
