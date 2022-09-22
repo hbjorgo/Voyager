@@ -1,6 +1,6 @@
 # Voyage
 
-Voyage is a C# library where you can report progress and it will estimate end time, time left and more!
+Voyage is a C# library where you can report progress and it will estimate end time, time left, average processing time and more!
 
 Feedback is very much welcome and please request features 🙂
 
