@@ -1,7 +1,4 @@
 # Voyage
-[![CI](https://github.com/hbjorgo/Voyage/workflows/CI/badge.svg)](https://github.com/hbjorgo/Voyage)
-[![Nuget](https://img.shields.io/nuget/v/hebotech.Voyage)](https://www.nuget.org/packages/HeboTech.Voyage)
-[![Nuget](https://img.shields.io/nuget/dt/HeboTech.Voyage)](https://www.nuget.org/packages/HeboTech.Voyage)
 
 Voyage is a C# library where you can report progress and it will estimate end time, time left and more!
 
