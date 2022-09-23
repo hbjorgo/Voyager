@@ -1,7 +1,7 @@
 ﻿using HeboTech.Voyager;
 
 int items = 100;
-Reporter reporter = new();
+IReporter reporter = new Reporter();
 
 reporter.Start(items);
 for (int i = 0; i < items; i++)

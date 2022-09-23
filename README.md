@@ -1,22 +1,22 @@
-# Voyage
+# Voyager
 
-Voyage is a C# library where you can report progress and it will estimate end time, time left, average processing time and more!
+Voyager is a C# library where you can report progress and it will estimate end time, time left, average processing time and more!
 
 Feedback is very much welcome and please request features 🙂
 
 ## Usage
 Install as NuGet package:
 ```shell
-dotnet add package HeboTech.Voyage
+dotnet add package HeboTech.Voyager
 ```
 
 Using it is easy:
 ```csharp
-using HeboTech.Voyage;
+using HeboTech.Voyager;
 
 int items = 5;
 
-Reporter reporter = new();
+IReporter reporter = new Reporter();
 reporter.Start(items);
 
 for (int i = 0; i < items; i++)
