@@ -4,17 +4,17 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageId>HeboTech.Voyage</PackageId>
-    <Title>HeboTech.Voyage</Title>
+    <PackageId>HeboTech.Voyager</PackageId>
+    <Title>HeboTech.Voyager</Title>
     <Version>0.1.0</Version>
     <Authors>HeboTech</Authors>
-    <Product>HeboTech.Voyage</Product>
+    <Product>HeboTech.Voyager</Product>
     <Company>HeboTech</Company>
     <Description>Calculates progress reports (estimated end time, estimated time left etc.)</Description>
-    <PackageProjectUrl>https://github.com/hbjorgo/Voyage</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/hbjorgo/Voyage</RepositoryUrl>
-    <PackageTags>voyage report progress</PackageTags>
-    <PackageReleaseNotes>https://github.com/hbjorgo/Voyage/releases</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/hbjorgo/Voyager</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hbjorgo/Voyager</RepositoryUrl>
+    <PackageTags>voyager report progress</PackageTags>
+    <PackageReleaseNotes>https://github.com/hbjorgo/Voyager/releases</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 

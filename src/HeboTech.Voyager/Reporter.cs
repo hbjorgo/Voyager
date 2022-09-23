@@ -1,18 +1,33 @@
 ﻿using System;
 
-namespace HeboTech.Voyage
+namespace HeboTech.Voyager
 {
+    /// <summary>
+    /// Estimates future progress based on previous progress
+    /// </summary>
     public class Reporter : IReporter
     {
+        private readonly Func<DateTime> timeProvider;
+
+        public Reporter()
+        {
+            timeProvider = () => DateTime.UtcNow;
+        }
+
+        public Reporter(Func<DateTime> timeProvider)
+        {
+            this.timeProvider = timeProvider ?? throw new ArgumentNullException(nameof(timeProvider));
+        }
+
         public int TotalItems { get; private set; }
         public DateTime StartTime { get; private set; }
         public DateTime LastReportingTime { get; private set; }
 
         public int ProcessedItems { get; private set; }
-        public double ProgressPercentage { get; private set; }
+        public double Progress { get; private set; }
         public DateTime EstimatedEndTime { get; private set; }
         public TimeSpan EstimatedTimeLeft { get; private set; }
-        public TimeSpan LastItemProcessingTime { get; private set; }
+        public TimeSpan LastBatchProcessingTime { get; private set; }
         public TimeSpan AverageProcessingTime { get; private set; }
 
         public void Start(int totalItems)
@@ -23,14 +38,14 @@ namespace HeboTech.Voyage
         public void Restart(int totalItems)
         {
             TotalItems = totalItems;
-            StartTime = DateTime.Now;
-            LastReportingTime = StartTime;
+            StartTime = timeProvider();
+            LastReportingTime = default;
 
             ProcessedItems = default;
-            ProgressPercentage = default;
+            Progress = default;
             EstimatedEndTime = default;
             EstimatedTimeLeft = default;
-            LastItemProcessingTime = default;
+            LastBatchProcessingTime = default;
             AverageProcessingTime = default;
         }
 
@@ -48,13 +63,13 @@ namespace HeboTech.Voyage
             if (ProcessedItems + processedItems > TotalItems)
                 throw new ArgumentException($"Cannot process more than {TotalItems} items");
 
-            DateTime now = DateTime.Now;
+            DateTime now = timeProvider();
 
             ProcessedItems += processedItems;
-            ProgressPercentage = ProcessedItems * 100f / TotalItems;
+            Progress = (double)ProcessedItems / TotalItems;
             int remainingItems = TotalItems - ProcessedItems;
 
-            LastItemProcessingTime = (now - LastReportingTime) / processedItems;
+            LastBatchProcessingTime = (now - LastReportingTime);
             LastReportingTime = now;
 
             TimeSpan timePerItem = (now - StartTime) / ProcessedItems;
@@ -65,7 +80,7 @@ namespace HeboTech.Voyage
 
         public override string ToString()
         {
-            return $"{ProgressPercentage:000.00}%, #{ProcessedItems}/{TotalItems}, End time: {EstimatedEndTime}, Time left: {EstimatedTimeLeft}";
+            return $"{Progress * 100:0.00}%, #{ProcessedItems}/{TotalItems}, End time: {EstimatedEndTime}, Time left: {EstimatedTimeLeft}";
         }
     }
 }

@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HeboTech.Voyage\HeboTech.Voyage.csproj" />
+    <ProjectReference Include="..\HeboTech.Voyager\HeboTech.Voyager.csproj" />
   </ItemGroup>
 
 </Project>
