@@ -1,4 +1,7 @@
 # Voyager
+[![CI](https://github.com/hbjorgo/Voyager/workflows/CI/badge.svg)](https://github.com/hbjorgo/Voyager)
+[![Nuget](https://img.shields.io/nuget/v/hebotech.Voyager)](https://www.nuget.org/packages/HeboTech.Voyager)
+[![Nuget](https://img.shields.io/nuget/dt/HeboTech.Voyager)](https://www.nuget.org/packages/HeboTech.Voyager)
 
 Voyager is a C# library where you can report progress and it will estimate end time, time left, average processing time and more!
 
