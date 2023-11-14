@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>HeboTech.Voyager</PackageId>
     <Title>HeboTech.Voyager</Title>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>HeboTech</Authors>
     <Product>HeboTech.Voyager</Product>
     <Company>HeboTech</Company>
