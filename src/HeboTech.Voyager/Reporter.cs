@@ -7,6 +7,7 @@ namespace HeboTech.Voyager
     /// </summary>
     public class Reporter : IReporter
     {
+        private readonly object lockObject = new object();
         private readonly Func<DateTime> timeProvider;
 
         public Reporter()
@@ -57,25 +58,28 @@ namespace HeboTech.Voyager
             if (processedItems == 0)
                 return;
 
-            if (ProcessedItems == TotalItems)
-                return;
+            lock (lockObject)
+            {
+                if (ProcessedItems == TotalItems)
+                    return;
 
-            if (ProcessedItems + processedItems > TotalItems)
-                throw new ArgumentException($"Cannot process more than {TotalItems} items");
+                if (ProcessedItems + processedItems > TotalItems)
+                    throw new ArgumentException($"Cannot process more than {TotalItems} items");
 
-            DateTime now = timeProvider();
+                DateTime now = timeProvider();
 
-            ProcessedItems += processedItems;
-            Progress = (double)ProcessedItems / TotalItems;
-            int remainingItems = TotalItems - ProcessedItems;
+                ProcessedItems += processedItems;
+                Progress = (double)ProcessedItems / TotalItems;
+                int remainingItems = TotalItems - ProcessedItems;
 
-            LastBatchProcessingTime = (now - LastReportingTime);
-            LastReportingTime = now;
+                LastBatchProcessingTime = (now - LastReportingTime);
+                LastReportingTime = now;
 
-            TimeSpan timePerItem = (now - StartTime) / ProcessedItems;
-            AverageProcessingTime = timePerItem;
-            EstimatedEndTime = now.Add(timePerItem * remainingItems);
-            EstimatedTimeLeft = EstimatedEndTime - now;
+                TimeSpan timePerItem = (now - StartTime) / ProcessedItems;
+                AverageProcessingTime = timePerItem;
+                EstimatedEndTime = now.Add(timePerItem * remainingItems);
+                EstimatedTimeLeft = EstimatedEndTime - now;
+            }
         }
 
         public override string ToString()
